@@ -1,5 +1,5 @@
 
-from corpo import *
+from main import*
 
 """ 
 ( ENTIDADE)
