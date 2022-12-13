@@ -1,5 +1,5 @@
 
-from main import*
+from corpo import *
 
 """ 
 ( ENTIDADE)
@@ -25,17 +25,17 @@ while True:
     if escolha == 1:
 
         cadastrar_jogador()
-    # elif escolha == 2:
+    elif escolha == 2:
 
-    #     exclui_por_escolha()
-    # elif escolha == 3:
+        exclui_por_escolha()
+    elif escolha == 3:
 
-    #     selecao_por_matricula()
-    # elif escolha == 4:
+        selecao_por_matricula()
+    elif escolha == 4:
 
-    #     mostra_todos()
-    # elif escolha == 5:
+        mostra_todos()
+    elif escolha == 5:
 
-    #     edita_infos()
-    # elif escolha == 0:
-    #     exclui_tudo()
+        edita_infos()
+    elif escolha == 0:
+        exclui_tudo()
