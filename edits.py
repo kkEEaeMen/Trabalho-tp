@@ -1,8 +1,4 @@
-import json
 from json_storage import *
-
-
-    
 
 # def muda_nome(dicionario_do_jogador: dict):
 #     """ Função para substituição do nome."""
@@ -28,11 +24,8 @@ from json_storage import *
 #                 i["Nome"] = valor
 #                 interface_nome.close()
 
-                
-
 #     guarda_arquivo(leitura)
             
-
 def muda_altura (dicionario_do_jogador: dict):
     """ Função para substituição do Altura."""
 
@@ -40,13 +33,11 @@ def muda_altura (dicionario_do_jogador: dict):
 
     valor = input("Insira um novo valor: ")
 
-
     for i in leitura:
         if i == dicionario_do_jogador:
             i["Altura"] = valor
-            
 
-    guarda_arquivo(leitura)
+    guarda_arquivo(leitura) # n sei se funciona, tem que ver se tem que fazer algo
 
 # def muda_time(dicionario_do_jogador: dict):
 #     """ Função para substituição do Time."""
