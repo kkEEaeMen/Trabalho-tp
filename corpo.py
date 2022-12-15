@@ -1,6 +1,6 @@
 from PySimpleGUI import PySimpleGUI as sg
 import json
-from TESTE3 import *
+from complemento import *
 
 lista = []
 dicionario = {}
@@ -8,7 +8,7 @@ nome_arquivo = "codigo.json"
 
 
 def abre_e_retorna() -> list:
-    """ Abre json para edição por leitura, devolvendo uma lista."""
+    """Abre json para edição por leitura, devolvendo uma lista."""
 
     arq = open(nome_arquivo, 'r', encoding='utf-8')
     data = arq.read()

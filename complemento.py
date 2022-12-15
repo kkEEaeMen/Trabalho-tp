@@ -1,6 +1,7 @@
 import json
 from PySimpleGUI import PySimpleGUI as sg
 
+
 def leitura_2() -> list:
     """ Abre json para edição por leitura, devolvendo uma lista."""
 
