@@ -1,12 +1,19 @@
 from PySimpleGUI import PySimpleGUI as sg
 import json
+<<<<<<< HEAD
 from complemento import *
+=======
+from editores import *
+from random import randint
+from manipulador import *
+>>>>>>> 81f07dd31ed3f7769099bffab0a9f1a5670336fc
 
 lista = []
 dicionario = {}
 nome_arquivo = "codigo.json"
 
 
+<<<<<<< HEAD
 def abre_e_retorna() -> list:
     """Abre json para edição por leitura, devolvendo uma lista."""
 
@@ -36,6 +43,8 @@ def guarda_arquivo(var_lista: list):
         return 'Confirmar'
     
 
+=======
+>>>>>>> 81f07dd31ed3f7769099bffab0a9f1a5670336fc
 def exclui_tudo():
     """ Exclui tudo de dentro do json"""
 
@@ -268,73 +277,9 @@ def cadastrar_jogador():
     """ Função para cadastrar jogadores no arquivo json."""
 
 
-    sg.theme('DarkPurple4')
-
-    opcoes = [
-        [sg.Text(20*"-=-")],
-        [sg.Text('1 - Insira um valor para matricula: '),
-         sg.Input(key='Código', size=(20, 2))],
-        [sg.Text('2 - Nome do jogador(a): '),
-         sg.Input(key='Identidade', size=(20, 2))],
-        [sg.Text('3 - Altura do jogador(a) em CM:'),
-         sg.Input(key='Tamanho', size=(20, 2))],
-        [sg.Text('4 - Time do jogador(a):'),
-         sg.Input(key='Equipe', size=(20, 2))],
-        [sg.Text('5 - Insira o peso do jogador(a) em KG:'),
-         sg.Input(key='KG', size=(20, 2))],
-        [sg.Button("Confirmar")],
-        [sg.Text(20*"-=-")]
-    ]
-
-    interface = sg.Window("Tela de cadastro", opcoes)
-
-    while True:
-        situacoes, escolhas = interface.read()
-        if situacoes == sg.WIN_CLOSED:
-            break
-
-        dicionario["Matricula"] = escolhas['Código']
+        dicionario["Matricula"] = ['Código']
         dicionario["Nome"] = escolhas['Identidade']
         dicionario["Altura"] = escolhas['Tamanho']
         dicionario["time"] = escolhas['Equipe']
         dicionario["Peso"] = escolhas['KG']
-        
-        var_lista = abre_e_retorna()
-
-        for verifica_campos1, verifica_campos2 in dicionario.items():
-            if verifica_campos2 == "":
-                sg.theme('Black')
-                mensag_de_erro = [
-
-                [sg.Text(20*"-=-")],
-                [sg.Text("Você não pode deixar campos vazios !")],
-                [sg.Button('Confirmar')],
-                [sg.Text(20*"-=-")]
-                                    ]
-                tela_de_verificacao = sg.Window("Erro !", mensag_de_erro)
-                bton, ky = tela_de_verificacao.read()
-                if bton == 'Confirmar':
-                    interface.close()
-                    tela_de_verificacao.close()
-                    return 0
-
-        for verifica_matricula in var_lista:
-            if verifica_matricula["Matricula"] == dicionario["Matricula"]:
-                sg.theme('Black')
-                mensagem_de_erro = [
-
-                [sg.Text(20*"-=-")],
-                [sg.Text("Essa matricula ja existe, favor inserir outra ! !")],
-                [sg.Button('Confirmar')],
-                [sg.Text(20*"-=-")]
-                                    ]
-                tela_de_verificacao2 = sg.Window("Erro !", mensagem_de_erro)
-                btton, kys = tela_de_verificacao2.read()
-                if btton == 'Confirmar':
-                    interface.close()
-                    tela_de_verificacao2.close()
-                    return 0
-
-        var_lista.append(dicionario)
-        guarda_arquivo(var_lista)
-        interface.close()
+    

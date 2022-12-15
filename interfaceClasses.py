@@ -3,6 +3,7 @@ from classes import *
 jogador.setNome(input("Insira um nome: "))
 print(jogador.interface())
 
+<<<<<<< HEAD
 # modificacao so para teste de commit 3
 
 class MostrarJogadores:
@@ -23,3 +24,6 @@ mostra = MostrarJogadores()
 print(mostra.imprimeJogadores()) 
 
         
+=======
+
+>>>>>>> 81f07dd31ed3f7769099bffab0a9f1a5670336fc

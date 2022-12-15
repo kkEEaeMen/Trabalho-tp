@@ -1,6 +1,8 @@
 import json
 from PySimpleGUI import PySimpleGUI as sg
+from manipulador import *
 
+<<<<<<< HEAD:complemento.py
 
 def leitura_2() -> list:
     """ Abre json para edição por leitura, devolvendo uma lista."""
@@ -31,10 +33,12 @@ def salva_substituicao(leitura: list):
         return 'Confirmar'
 
     
+=======
+>>>>>>> 81f07dd31ed3f7769099bffab0a9f1a5670336fc:editores.py
 def muda_nome(dicionario_do_jogador: dict):
     """ Função para substituição do nome."""
 
-    leitura = leitura_2()
+    leitura = abre_e_retorna()
     for dicts in range(len(leitura)):
         if leitura[dicts] == dicionario_do_jogador:
             sg.theme('DarkPurple3')
@@ -57,13 +61,13 @@ def muda_nome(dicionario_do_jogador: dict):
 
                 
 
-    salva_substituicao(leitura)
+    guarda_arquivo(leitura)
             
 
 def muda_altura (dicionario_do_jogador: dict):
     """ Função para substituição do Altura."""
 
-    leitura = leitura_2()
+    leitura = abre_e_retorna()
     for dicts in range(len(leitura)):
         if leitura[dicts] == dicionario_do_jogador:
             sg.theme('DarkPurple3')
@@ -84,12 +88,12 @@ def muda_altura (dicionario_do_jogador: dict):
                 i["Altura"] = valor
                 interface_altura.close()
 
-    salva_substituicao(leitura)
+    guarda_arquivo(leitura)
 
 def muda_time(dicionario_do_jogador: dict):
     """ Função para substituição do Time."""
 
-    leitura = leitura_2()
+    leitura = abre_e_retorna()
     for dicts in range(len(leitura)):
         if leitura[dicts] == dicionario_do_jogador:
             sg.theme('DarkPurple3')
@@ -108,13 +112,13 @@ def muda_time(dicionario_do_jogador: dict):
             if i == dicionario_do_jogador:
                 i["time"] = valor
                 interface_time.close()
-    salva_substituicao(leitura)
+    guarda_arquivo(leitura)
 
 
 def muda_peso(dicionario_do_jogador: dict):
     """ Função para substituição do Peso."""
 
-    leitura = leitura_2()
+    leitura = abre_e_retorna()
     for dicts in range(len(leitura)):
         if leitura[dicts] == dicionario_do_jogador:
             sg.theme('DarkPurple3')
@@ -133,6 +137,6 @@ def muda_peso(dicionario_do_jogador: dict):
             if i == dicionario_do_jogador:
                 i["Peso"] = valor
                 interface_peso.close()
-    salva_substituicao(leitura)
+    guarda_arquivo(leitura)
             
 
