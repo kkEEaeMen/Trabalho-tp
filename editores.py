@@ -2,8 +2,6 @@ import json
 from PySimpleGUI import PySimpleGUI as sg
 from manipulador import *
 
-<<<<<<< HEAD:complemento.py
-
 def leitura_2() -> list:
     """ Abre json para edição por leitura, devolvendo uma lista."""
 
@@ -33,8 +31,7 @@ def salva_substituicao(leitura: list):
         return 'Confirmar'
 
     
-=======
->>>>>>> 81f07dd31ed3f7769099bffab0a9f1a5670336fc:editores.py
+
 def muda_nome(dicionario_do_jogador: dict):
     """ Função para substituição do nome."""
 

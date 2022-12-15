@@ -1,71 +1,27 @@
 from PySimpleGUI import PySimpleGUI as sg
 import json
-<<<<<<< HEAD
-from complemento import *
-=======
 from editores import *
-from random import randint
+from editores import *
+import random
 from manipulador import *
->>>>>>> 81f07dd31ed3f7769099bffab0a9f1a5670336fc
 
 lista = []
 dicionario = {}
 nome_arquivo = "codigo.json"
 
-
-<<<<<<< HEAD
-def abre_e_retorna() -> list:
-    """Abre json para edição por leitura, devolvendo uma lista."""
-
-    arq = open(nome_arquivo, 'r', encoding='utf-8')
-    data = arq.read()
-    return json.loads(data)
-
-def guarda_arquivo(var_lista: list):
     
-
-    arq = open(nome_arquivo, 'w+', encoding='utf-8')
-    data = json.dumps(var_lista, indent=4)
-    arq.write(data)
-    arq.close()
-    sg.theme('DarkBlue16')
-    mensagem_de_conclusao = [
-
-            [sg.Text(20*"-=-")],
-            [sg.Text("As informações foram salvas com sucesso !")],
-            [sg.Button('Confirmar')],
-            [sg.Text(20*"-=-")]
-                                ]
-    conclusao_tela = sg.Window("Conclusão", mensagem_de_conclusao)
-    b, c = conclusao_tela.read()
-    if b == 'Confirmar':
-        conclusao_tela.close()
-        return 'Confirmar'
-    
-
-=======
->>>>>>> 81f07dd31ed3f7769099bffab0a9f1a5670336fc
 def exclui_tudo():
     """ Exclui tudo de dentro do json"""
 
-    opcoes = [
-        [sg.Text(20*"-=-")],
-        [sg.Text("Deseja realmente apagar todas as matriculas ")],
-        [sg.Button('Sim'),sg.Button('Não')],
-        [sg.Text(20*"-=-")]
-    ]
-    tela = sg.Window("Deletar", opcoes)
-    ch, ky = tela.read()
-    if ch == 'Sim':
-        tela.close()
+    pergunta = input("Deseja excluir tudo ? (s/n)\n").lower()
+    
+    if pergunta == 's':
         dicii = []
         arq = open(nome_arquivo, 'w', encoding='UTF-8')
         data = json.dumps(dicii)
         arq.write(data)
         arq.close
-    else:
-        tela.close()
-        return 0 
+    
 
 
 def selecao_por_matricula():
@@ -237,49 +193,15 @@ def edita_infos():
 
 def exclui_por_escolha():
     lis = abre_e_retorna()
-  
-    sg.theme('DarkPurple4')
-    interface_de_opcao_invalida = [
-        [sg.Text(20*"-=-")],
-        [sg.Text("Insira matricula do jogador que deseja excluir"), sg.Input(key= ('mat'))],
-        [sg.Button('Confirmar')],
-        [sg.Text(20*"-=-")]
-    ]
-    interface2 = sg.Window("Busca", interface_de_opcao_invalida)
-    botao, keys = interface2.read()
-    for chave, valor in keys.items():
-        matri = valor
-    if botao == 'Confirmar':
-        interface2.close()
-        for elementos in lis:
-            if elementos["Matricula"] == matri:
-                posicao = lis.index(elementos)
-                lis.pop(posicao)
-                guarda_arquivo(lis)
-                return 0
+    pass
     
-    sg.theme('Black')
-    interface3 = [
-        [sg.Text(20*"-=-")],
-        [sg.Text('Jogador não encontrado.\nPor favor tente outra matricula !')],
-        [sg.Button('Voltar')],
-        [sg.Text(20*"-=-")]
-    ]
-    interf = sg.Window("Erro !", interface3)
-    b2, k2 = interf.read()
-    if b2 == 'Voltar':
-        interf.close()
-        interface2.close()
-        return "Não encontrado"
 
 
 def cadastrar_jogador():
     """ Função para cadastrar jogadores no arquivo json."""
-
-
-        dicionario["Matricula"] = ['Código']
-        dicionario["Nome"] = escolhas['Identidade']
-        dicionario["Altura"] = escolhas['Tamanho']
-        dicionario["time"] = escolhas['Equipe']
-        dicionario["Peso"] = escolhas['KG']
-    
+        
+        dicionario["Matricula"] = input("Insira um valor: ")
+        dicionario["Nome"] = input("Insira o nome do jogador: ")
+        dicionario["Altura"] = input("Insira a altura do jogador: ")
+        dicionario["time"] = input("Insira o time do jogador: ")
+        dicionario["Peso"] = input("Insira o peso do jogador: ")
