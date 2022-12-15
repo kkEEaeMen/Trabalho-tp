@@ -22,19 +22,19 @@ while True:
     escolha = int(input("Insira a opção desejada: "))
     
     if escolha == 1:
-
         cadastrar_jogador()
-    elif escolha == 2:
 
-        exclui_por_escolha()
-    elif escolha == 3:
+    # elif escolha == 2:
 
-        selecao_por_matricula()
-    elif escolha == 4:
+    #     exclui_por_escolha()
+    # elif escolha == 3:
 
-        mostra_todos()
+    #     selecao_por_matricula()
+    # elif escolha == 4:
+
+    #     mostra_todos()
     elif escolha == 5:
 
         edita_infos()
-    elif escolha == 0:
-        exclui_tudo()
+    # elif escolha == 0:
+    #     exclui_tudo()

@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "Matricula": 87,
+        "Nome": "Gabriel",
+        "Altura": "176",
+        "time": "IFES",
+        "Peso": "106"
+    },
+    {
+        "Matricula": 28,
+        "Nome": "Pedro",
+        "Altura": "190",
+        "time": "IFES",
+        "Peso": "90"
+    }
+]
