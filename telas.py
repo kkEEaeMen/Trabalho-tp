@@ -1,4 +1,4 @@
-from classes import *
+from modelagem import *
 
 class MostrarJogadores:
 

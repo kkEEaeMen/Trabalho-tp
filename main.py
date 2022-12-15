@@ -1,16 +1,14 @@
 import json
-from editores import *
+from edits import *
 import random
-from manipulador import *
-from classes import *
-from interfaceClasses import *
+from json_storage import *
+from modelagem import *
+from telas import *
 import os
 
 lista = []
 dicionario = {}
 
-
-    
 def exclui_tudo():
     """ Exclui tudo de dentro do json"""
 
@@ -23,8 +21,6 @@ def exclui_tudo():
         arq.write(data)
         arq.close
     
-
-
 def selecao_por_matricula():
     """ Imprime as informações de um jogador buscado pela matricula """ 
     os.system('cls')
@@ -38,14 +34,9 @@ def selecao_por_matricula():
             print(mostra.imprimeJogadores())
             print(input("Aperte ENTER para continuar... "))
 
-
-
-
-
 def mostra_todos():
     os.system('cls')
     lista_de_jogadores = abre_e_retorna()
-
 
     for i in range(len(lista_de_jogadores)):
         set(lista_de_jogadores[i]["Matricula"], lista_de_jogadores[i]["Nome"], lista_de_jogadores[i]["Altura"], lista_de_jogadores[i]["Peso"], lista_de_jogadores[i]["time"])
@@ -53,9 +44,6 @@ def mostra_todos():
         print(10*"--==")
     
     print(input("Aperte ENTER para continuar... "))
-
-        
-
 
 def edita_infos():
     """ A pessoa escolhe o jogador através da matricula acessando as infos que deseja editar."""
@@ -77,18 +65,12 @@ def edita_infos():
                 # if opcao == 4:
                 #     muda_peso()
 
-
-
-
-
 # def exclui_por_escolha():
 #     lis = abre_e_retorna()
 #     pass
     
-
-
 def cadastrar_jogador():
-
+        """ Recolhe as infos de cada jogador."""
         infos = abre_e_retorna()
 
         dicionario["Matricula"] = random.randint(1,100)

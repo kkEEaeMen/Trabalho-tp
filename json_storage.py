@@ -1,6 +1,6 @@
 import json
 
-nome_arquivo = "codigo.json"
+nome_arquivo = "storage.json"
 
 def abre_e_retorna() -> list:
     """ Abre json para edição por leitura, devolvendo uma lista."""

@@ -11,7 +11,6 @@ class Jogador:
     def getMatricula(self):
         return self.__matricula
 
-
     def setNome(self, nome):
         self.__nome = nome
 
