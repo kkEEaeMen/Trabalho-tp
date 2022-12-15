@@ -40,50 +40,20 @@ def selecao_por_matricula():
 
 
 
-# def apaga_infos_do_txt():
-#     """ Complemento da função ler_arquivo e mostra_todos. """
-
-#     exclui = open('txt.txt', 'w', encoding='UTF-8')
-#     exclui.close()
 
 
-# def ler_arquivo_txt():
-#     """ Complemento da função mostra_todos"""
-#     arq1 = open('txt.txt', 'r', encoding='UTF-8')
-#     return arq1.read()
+def mostra_todos():
+    os.system('cls')
+    lista_de_jogadores = abre_e_retorna()
 
 
-# def mostra_todos():
-#     """ Função que mostra tudo do arquivo json em uma interface """
+    for i in range(len(lista_de_jogadores)):
+        set(lista_de_jogadores[i]["Matricula"], lista_de_jogadores[i]["Nome"], lista_de_jogadores[i]["Altura"], lista_de_jogadores[i]["Peso"], lista_de_jogadores[i]["time"])
+        print(mostra.imprimeJogadores())
+        print(10*"--==")
     
-#     aux = []
-#     sg.theme('DarkPurple4')
-#     # INSERE NO ARQUIVO TXT
-#     lis = abre_e_retorna()
-#     for dicionarios in lis:
-#         aux.append(str(dicionarios))
-#     for dicionarios_em_string in aux:
-#         arq_txt = open('txt.txt', 'a', encoding='UTF-8')
-#         insere = arq_txt.write(f"\n{dicionarios_em_string}")
-#         arq_txt.close()
+    print(input("Aperte ENTER para continuar... "))
 
-#     leitura = ler_arquivo_txt()
-#     opcoes = [
-#         [sg.Text(20*"-=-")],
-#         [sg.Text(leitura)],
-#         [sg.Button('Voltar')],
-#         [sg.Text(20*"-=-")]
-#     ]
-#     interface = sg.Window("Informações", opcoes)
-
-#     apaga_infos_do_txt()
-
-#     situacoes, escolhas = interface.read()
-#     if situacoes == sg.WIN_CLOSED:
-#         interface.close()
-#     if situacoes == 'Voltar':
-#         interface.close()
-#         return 0
         
 
 

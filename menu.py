@@ -27,18 +27,16 @@ while True:
         cadastrar_jogador()
 
     # elif escolha == 2:
-
     #     exclui_por_escolha()
 
     elif escolha == 3:
-
         selecao_por_matricula()
 
-    # elif escolha == 4:
+    elif escolha == 4:
+        mostra_todos()
 
-    #     mostra_todos()
     elif escolha == 5:
-
         edita_infos()
-    # elif escolha == 0:
-    #     exclui_tudo()
+
+    elif escolha == 0:
+        exclui_tudo()
