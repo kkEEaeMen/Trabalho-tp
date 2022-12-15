@@ -3,6 +3,14 @@ class Jogador:
     __altura: float
     __peso: float
     __matricula: int
+    __time: str
+
+    def setMatricula(self, matricula):
+        self.__matricula = matricula
+
+    def getMatricula(self):
+        return self.__matricula
+
 
     def setNome(self, nome):
         self.__nome = nome
@@ -22,17 +30,23 @@ class Jogador:
     def getPeso(self):
         return self.__peso
 
-    def setMatricula(self, matricula):
-        self.__matricula = matricula
+    def setTime(self, time):
+        self.__time = time
 
-    def getMatricula(self):
-        return self.__matricula
- 
+    def getTime(self):
+        return self.__time
+
     def interface(self):
         return f"O {self.__nome} é gente boa !"
 
 jogador = Jogador()
 
+def set(matricula, nome, altura, peso, time):
+    jogador.setMatricula(matricula)
+    jogador.setNome(nome)
+    jogador.setAltura(altura)
+    jogador.setPeso(peso)
+    jogador.setTime(time)
 
 
 

@@ -17,6 +17,8 @@ JOGADOR DE BASQUETE
 
 while True:
 
+    os.system('cls')
+    
     print(' 1 - cadastrar jogador\n 2 - Excluir jogador por matricula\n 3 - informações de um jogador\n 4 - Mostrar todos o jogadores\n 5 - Editar informações\n 0 - Apagar tudo')
     
     escolha = int(input("Insira a opção desejada: "))
@@ -27,9 +29,11 @@ while True:
     # elif escolha == 2:
 
     #     exclui_por_escolha()
-    # elif escolha == 3:
 
-    #     selecao_por_matricula()
+    elif escolha == 3:
+
+        selecao_por_matricula()
+
     # elif escolha == 4:
 
     #     mostra_todos()

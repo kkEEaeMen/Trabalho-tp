@@ -2,6 +2,9 @@ import json
 from editores import *
 import random
 from manipulador import *
+from classes import *
+from interfaceClasses import *
+import os
 
 lista = []
 dicionario = {}
@@ -24,17 +27,17 @@ def exclui_tudo():
 
 def selecao_por_matricula():
     """ Imprime as informações de um jogador buscado pela matricula """ 
-    
+    os.system('cls')
     lista_de_jogadores = abre_e_retorna()
 
     mat = int(input("Insira matricula do jogador que deseja editar as informações:"))
     for i in lista_de_jogadores:
         if i["Matricula"] == mat:
-            nome = i["Nome"]
-            altura = ["Altura"]
-            peso = ["Peso"]
-            time = ["time"]
-    
+            set(i["Matricula"], i["Nome"], i["Altura"], i["Peso"], i["time"])
+            os.system('cls')
+            print(mostra.imprimeJogadores())
+            print(input("Aperte ENTER para continuar... "))
+
 
 
 # def apaga_infos_do_txt():
