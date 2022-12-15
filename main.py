@@ -81,3 +81,8 @@ def cadastrar_jogador():
 
         infos.append(dicionario)
         guarda_arquivo(infos)
+        os.system('cls')
+        print(10 * "--==")
+        print(" A matricula gerada foi:",dicionario["Matricula"],"\n Favor guardar a matricula.")
+        print(10 * "--==")
+        print(input("Aperte ENTER para voltar ao menu... "))
