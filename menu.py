@@ -1,4 +1,5 @@
 from main import *
+from cores import *
 
 """ 
 ( ENTIDADE)
@@ -19,7 +20,7 @@ while True:
 
     os.system('cls')
     
-    print(" 1 - cadastrar jogador\n 2 - Excluir jogador por matricula\n 3 - informações de um jogador\n 4 - Mostrar todos o jogadores\n 5 - Editar informações\n 0 - Apagar tudo\n 9 - Sair ")
+    print(f"{vermelho} 1 - cadastrar jogador\n 2 - Excluir jogador por matricula\n 3 - informações de um jogador\n 4 - Mostrar todos o jogadores\n 5 - Editar informações\n 0 - Apagar tudo\n 9 - Sair ")
     
     escolha = int(input("Insira a opção desejada: "))
     
