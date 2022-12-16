@@ -1,1 +1,16 @@
-[]
+[
+    {
+        "Matricula": 2,
+        "Nome": "luan",
+        "Altura": "209",
+        "time": "fla",
+        "Peso": "30"
+    },
+    {
+        "Matricula": 32,
+        "Nome": "luan2",
+        "Altura": "209",
+        "time": "fla2",
+        "Peso": "35"
+    }
+]

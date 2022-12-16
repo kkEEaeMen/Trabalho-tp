@@ -50,20 +50,17 @@ def edita_infos():
 
     lista_de_jogadores = abre_e_retorna()
 
-    mat = int(input("Insira matricula do jogador que deseja editar as informações:"))
-    
-    for i in lista_de_jogadores:
-        if i["Matricula"] == mat:
-                print("1 - Nome\n 2 - Time\n 3 - Altura\n 4 - Peso\n")
-                opcao = int(input("Insira a opção desejada"))
-                # if opcao == 1:
-                #     muda_nome()
-                # if opcao == 2:
-                #     muda_time()
-                # if opcao == 3:
-                #     muda_altura()
-                # if opcao == 4:
-                #     muda_peso()
+   
+    print(" 1 - Nome\n 2 - Time\n 3 - Altura\n 4 - Peso\n")
+    opcao = int(input("Insira a opção desejada: "))
+    # if opcao == 1:
+    #     muda_nome()
+    # if opcao == 2:
+    #     muda_time()
+    if opcao == 3:
+        muda_altura()
+    # if opcao == 4:
+    #     muda_peso()
 
 # def exclui_por_escolha():
 #     lis = abre_e_retorna()
