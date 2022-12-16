@@ -26,16 +26,28 @@ from json_storage import *
 
 #     guarda_arquivo(leitura)
             
-def muda_altura (dicionario_do_jogador: dict):
+def muda_altura ():
     """ Função para substituição do Altura."""
 
     leitura = abre_e_retorna()
 
-    valor = input("Insira um novo valor: ")
+    mat = int(input("Insira matricula do jogador que deseja editar as informações:"))
+    
+    for jogador in leitura:
+        if jogador["Matricula"] == mat:
+            valor = input("Insira um novo valor: ")
 
-    for i in leitura:
-        if i == dicionario_do_jogador:
-            i["Altura"] = valor
+            for altura in leitura:
+                altura["Altura"] = valor
+
+    guarda_arquivo(leitura)
+
+
+    
+    
+    input("Pressione ENTER para voltar ao menu")
+
+
 
     guarda_arquivo(leitura) # n sei se funciona, tem que ver se tem que fazer algo
 
