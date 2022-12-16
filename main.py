@@ -1,10 +1,10 @@
 import json
-from edits import *
-import random
 from json_storage import *
+from edits import *
 from modelagem import *
 from telas import *
 import os
+import random
 
 lista = []
 dicionario = {}
@@ -68,21 +68,22 @@ def edita_infos():
 # def exclui_por_escolha():
 #     lis = abre_e_retorna()
 #     pass
-    
+
+
 def cadastrar_jogador():
-        """ Recolhe as infos de cada jogador."""
-        infos = abre_e_retorna()
+        
+    infos = abre_e_retorna()
 
-        dicionario["Matricula"] = random.randint(1,100)
-        dicionario["Nome"] = input("Insira o nome do jogador: ")
-        dicionario["Altura"] = input("Insira a altura do jogador: ")
-        dicionario["time"] = input("Insira o time do jogador: ")
-        dicionario["Peso"] = input("Insira o peso do jogador: ")
+    dicionario["Matricula"] = random.randint(1,100)
+    dicionario["Nome"] = input("Insira o nome do jogador: ")
+    dicionario["Altura"] = input("Insira a altura do jogador: ")
+    dicionario["time"] = input("Insira o time do jogador: ")
+    dicionario["Peso"] = input("Insira o peso do jogador: ")
 
-        infos.append(dicionario)
-        guarda_arquivo(infos)
-        os.system('cls')
-        print(10 * "--==")
-        print(" A matricula gerada foi:",dicionario["Matricula"],"\n Favor guardar a matricula.")
-        print(10 * "--==")
-        print(input("Aperte ENTER para voltar ao menu... "))
+    infos.append(dicionario)
+    guarda_arquivo(infos)
+    os.system('cls')
+    print(10 * "--==")
+    print(" A matricula gerada foi:",dicionario["Matricula"],"\n Favor guardar a matricula.")
+    print(10 * "--==")
+    print(input("Aperte ENTER para voltar ao menu... "))
