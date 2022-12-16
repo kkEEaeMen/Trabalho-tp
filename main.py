@@ -27,9 +27,9 @@ def selecao_por_matricula():
     lista_de_jogadores = abre_e_retorna()
 
     mat = int(input("Insira matricula do jogador que deseja editar as informações:"))
-    for i in lista_de_jogadores:
-        if i["Matricula"] == mat:
-            set(i["Matricula"], i["Nome"], i["Altura"], i["Peso"], i["time"])
+    for jogador in lista_de_jogadores:
+        if jogador["Matricula"] == mat:
+            set(jogador["Matricula"], jogador["Nome"], jogador["Altura"], jogador["Peso"], jogador["time"])
             os.system('cls')
             print(mostra.imprimeJogadores())
             print(input("Aperte ENTER para continuar... "))
@@ -38,8 +38,8 @@ def mostra_todos():
     os.system('cls')
     lista_de_jogadores = abre_e_retorna()
 
-    for i in range(len(lista_de_jogadores)):
-        set(lista_de_jogadores[i]["Matricula"], lista_de_jogadores[i]["Nome"], lista_de_jogadores[i]["Altura"], lista_de_jogadores[i]["Peso"], lista_de_jogadores[i]["time"])
+    for indices in range(len(lista_de_jogadores)):
+        set(lista_de_jogadores[indices]["Matricula"], lista_de_jogadores[indices]["Nome"], lista_de_jogadores[indices]["Altura"], lista_de_jogadores[indices]["Peso"], lista_de_jogadores[indices]["time"])
         print(mostra.imprimeJogadores())
         print(10*"--==")
     
@@ -48,24 +48,20 @@ def mostra_todos():
 def edita_infos():
     """ A pessoa escolhe o jogador através da matricula acessando as infos que deseja editar."""
 
-    lista_de_jogadores = abre_e_retorna()
-
-   
     print(" 1 - Nome\n 2 - Time\n 3 - Altura\n 4 - Peso\n")
     opcao = int(input("Insira a opção desejada: "))
-    # if opcao == 1:
-    #     muda_nome()
-    # if opcao == 2:
-    #     muda_time()
+    if opcao == 1:
+        muda_nome()
+    if opcao == 2:
+        muda_time()
     if opcao == 3:
         muda_altura()
-    # if opcao == 4:
-    #     muda_peso()
+    if opcao == 4:
+        muda_peso()
 
 # def exclui_por_escolha():
 #     lis = abre_e_retorna()
 #     pass
-
 
 def cadastrar_jogador():
         

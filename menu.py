@@ -32,12 +32,16 @@ while True:
     
     elif escolha == 3:
         selecao_por_matricula()  # consertar NONE
+        
     elif escolha == 4:
         mostra_todos()   
+
     elif escolha == 5:
-        edita_infos()    # terminar
+        edita_infos()   
+
     elif escolha == 0:
         exclui_tudo()   
+
     else:
         os.system('cls')
         break
