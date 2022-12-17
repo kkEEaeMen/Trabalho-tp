@@ -27,8 +27,8 @@ while True:
     if escolha == 1:
         cadastrar_jogador()
 
-    # elif escolha == 2:
-    #     exclui_por_escolha()   
+    elif escolha == 2:
+        excluir_por_escolha()   
     
     elif escolha == 3:
         selecao_por_matricula()  # consertar NONE

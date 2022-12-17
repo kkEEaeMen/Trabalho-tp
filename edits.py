@@ -49,8 +49,6 @@ def muda_time():
     guarda_arquivo(leitura)
 
 
-
-
 def muda_peso():
     """ Função para substituição do Peso."""
 
@@ -65,5 +63,20 @@ def muda_peso():
     guarda_arquivo(leitura)
     input("Pressione ENTER para voltar ao menu")
     guarda_arquivo(leitura)
+
+def excluir_por_escolha():
+    """ Função para excluir por matricula."""
+
+    leitura = abre_e_retorna()
+    mat = int(input("Insira matricula do jogador que deseja apagar as informações:"))
+    for jogador in leitura:
+        if jogador["Matricula"] == mat:
+            a = leitura.index(jogador)
+            print(a)
+            
+
+
+
+
             
 
