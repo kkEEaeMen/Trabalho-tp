@@ -35,8 +35,6 @@ class Jogador:
     def getTime(self):
         return self.__time
 
-    def interface(self):
-        return f"O {self.__nome} é gente boa !"
 
 jogador = Jogador()
 

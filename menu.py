@@ -31,7 +31,7 @@ while True:
         excluir_por_escolha()   
     
     elif escolha == 3:
-        selecao_por_matricula()  # consertar NONE
+        selecao_por_matricula()
         
     elif escolha == 4:
         mostra_todos()   
