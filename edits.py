@@ -64,6 +64,7 @@ def muda_peso():
     input("Pressione ENTER para voltar ao menu")
     guarda_arquivo(leitura)
 
+
 def excluir_por_escolha():
     """ Função para excluir por matricula."""
 
@@ -71,8 +72,16 @@ def excluir_por_escolha():
     mat = int(input("Insira matricula do jogador que deseja apagar as informações:"))
     for jogador in leitura:
         if jogador["Matricula"] == mat:
-            a = leitura.index(jogador)
-            print(a)
+            indice = leitura.index(jogador)
+            leitura.pop(indice)
+    guarda_arquivo(leitura)
+    print(10*"-=-=-")
+    print("Informações do jogador apagadas com sucesso")
+    print(10*"-=-=-")
+
+            
+    input("Pressione ENTER para voltar ao menu")
+
             
 
 
