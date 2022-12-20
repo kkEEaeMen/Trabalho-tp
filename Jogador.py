@@ -36,15 +36,14 @@ class Jogador:
         return self.__time
 
 
-jogador = Jogador()
-
-def set(matricula, nome, altura, peso, time):
-    jogador.setMatricula(matricula)
-    jogador.setNome(nome)
-    jogador.setAltura(altura)
-    jogador.setPeso(peso)
-    jogador.setTime(time)
-
+    def toDict(self):
+        return {
+            "Matricula": self.__matricula,
+            "Nome": self.__nome,
+            "Peso": self.__peso,
+            "Altura": self.__altura,
+            "Time": self.__time
+        }
 
 
 

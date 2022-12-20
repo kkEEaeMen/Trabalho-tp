@@ -1,47 +1,36 @@
-from main import *
-from cores import *
+from telas import *
+# from persistencia import *
+def menu():
+    print(" 1 - cadastrar jogador\n 2 - Excluir jogador por matricula\n 3 - informações de um jogador\n 4 - Mostrar todos o jogadores\n 5 - Editar informações\n 0 - Apagar tudo\n 9 - Sair ")
+    opção = int(input("Insira a opção desejada: "))
+    return opção
 
-""" 
-( ENTIDADE)
-
-JOGADOR DE BASQUETE 
-
-( ATRIBUTOS)
-
----> MATRICULA
----> NOME
----> TIME
----> ALTURA
----> PESO
-
-"""
+# persistencia = Persistencia()
 
 while True:
+    opção = menu()
 
-    os.system('cls')
-    
-    print(f"{vermelho} 1 - cadastrar jogador\n 2 - Excluir jogador por matricula\n 3 - informações de um jogador\n 4 - Mostrar todos o jogadores\n 5 - Editar informações\n 0 - Apagar tudo\n 9 - Sair ")
-    
-    escolha = int(input("Insira a opção desejada: "))
-    
-    if escolha == 1:
-        cadastrar_jogador()
+    if opção == 1:
+        teste.cadastrarjogador()
 
-    elif escolha == 2:
-        excluir_por_escolha()   
+    elif opção == 2:
+        teste.excluirJogador()   
     
-    elif escolha == 3:
-        selecao_por_matricula()
+    elif opção == 3:
+        teste.selecionarJogador()
         
-    elif escolha == 4:
-        mostra_todos()   
+    elif opção == 4:
+        teste.exibirJogador()   
 
-    elif escolha == 5:
-        edita_infos()   
+    elif opção == 5:
+        teste.editarJogador()   
 
-    elif escolha == 0:
-        exclui_tudo()   
+    elif opção == 0:
+        teste.excluirJogador()   
 
     else:
         os.system('cls')
         break
+
+        
+
