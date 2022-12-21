@@ -1,22 +1,31 @@
 import json
-import os
+import os.path
+
 
 class JsonStorage:
-    __nome_arquivo = "dados.json"
+    __nome_arquivo = 'dados.json'
 
-def abre_e_retorna() -> list:
-    """ Abre json para edição por leitura, devolvendo uma lista."""
+    def lerJson(self) -> list[dict]:
+        if not os.path.isfile(self.__nome_arquivo):
+            self.criarArquivo()
 
-    arq = open(JsonStorage.__nome_arquivo, 'r', encoding='utf-8')
-    data = arq.read()
-    return json.loads(data)
+        arq = open(self.__nome_arquivo, 'r', encoding='utf-8')
+        data = arq.read()
 
+        if len(data) == 0:
+            return []
 
-def guarda_arquivo(var_lista: list):
-    
-    arq = open(JsonStorage.__nome_arquivo, 'w+', encoding='utf-8')
-    data = json.dumps(var_lista, indent=4)
-    arq.write(data)
-    arq.close()
+        data = json.loads(data)
+        arq.close()
 
-    
+        return data
+
+    def gravarJson(self, dados: list[dict]) -> None:
+        arq = open(self.__nome_arquivo, 'w+', encoding='utf-8')
+        data = json.dumps(dados, indent=4)
+        arq.write(data)
+        arq.close()
+
+    def criarArquivo(self) -> None:
+        arq = open(self.__nome_arquivo, 'w+', encoding='utf-8')
+        arq.close()

@@ -1,36 +1,49 @@
 from telas import *
-# from persistencia import *
-def menu():
-    print(" 1 - cadastrar jogador\n 2 - Excluir jogador por matricula\n 3 - informações de um jogador\n 4 - Mostrar todos o jogadores\n 5 - Editar informações\n 0 - Apagar tudo\n 9 - Sair ")
-    opção = int(input("Insira a opção desejada: "))
-    return opção
+from persistencia import Persistencia
 
-# persistencia = Persistencia()
+
+def menu():
+    limparTela()
+    print("-------- Sistema de Jogadores --------")
+    print("1 - Cadastrar Jogador")
+    print("2 - Editar Jogador")
+    print("3 - Excluir Jogador")
+    print("4 - Selecionar Jogador")
+    print("5 - Listar Jogadores")
+    print("6 - Sair")
+    print("-------------------------------------")
+    opcao = int(input("Digite a opção desejada: "))
+    return opcao
+
+
+persistencia = Persistencia()
 
 while True:
-    opção = menu()
+    opcao = menu()
 
-    if opção == 1:
-        teste.cadastrarjogador()
-
-    elif opção == 2:
-        teste.excluirJogador()   
-    
-    elif opção == 3:
-        teste.selecionarJogador()
-        
-    elif opção == 4:
-        teste.exibirJogador()   
-
-    elif opção == 5:
-        teste.editarJogador()   
-
-    elif opção == 0:
-        teste.excluirJogador()   
-
-    else:
-        os.system('cls')
+    if opcao == 1:
+        jogador = cadastrarJogador()
+        persistencia.criar(jogador)
+        exibirMsg("Jogador cadastrado com sucesso!")
+    elif opcao == 2:
+        jogador = editarJogador()
+        persistencia.editar(jogador)
+        exibirMsg("Jogador editado com sucesso!")
+    elif opcao == 3:
+        limparTela()
+        id = excluirJogador()
+        persistencia.excluir(id)
+        exibirMsg("Jogador excluído com sucesso!")
+    elif opcao == 4:
+        id = selecionarJogador()
+        jogador = persistencia.selecionar(id)
+        if jogador == None:
+            exibirMsg("Jogador não encontrado!")
+        else:
+            exibirJogador(jogador)
+            travarTela()
+    elif opcao == 5:
+        jogadores = persistencia.selecionar_todos()
+        exibirJogadores(jogadores)
+    elif opcao == 6:
         break
-
-        
-
